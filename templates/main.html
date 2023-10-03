@@ -1,0 +1,215 @@
+{% extends "base.html" %} {% load static %} 
+
+{% block head %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<link rel="stylesheet" href="{% static "css/main.css" %}"> 
+
+{% endblock head %} 
+
+{% block content %}
+
+<div class="mainContainer">
+    <!-- 메인 화면 -->
+    <div class="title Pyeong-Bold-White horizon-middle">동그라미</div>
+    <div class="intro-wrap">
+        <div class="date Gmarket-Medium-White">OCTOBER &nbsp <span class="red">5-6&nbsp;</span>, 2023</div>
+        <div class="desc Gmarket-Medium-White horizon-middle">
+            <div>한서대학교 대동제 &nbsp <span class="yellow">동그라미</span></div>
+        </div>
+
+        <p><span></span><span></span><span></span></p>
+    </div>
+
+    <!-- 부스 맵 -->
+    <div class="boothmap-wrap Pyeong-Bold-White horizon-middle">
+        BOOTH MAP
+        <img class="mainMap" src="{% static 'img/boothLoc.jpeg' %}" alt="">
+        <button class="booth" onclick="location.href = 'intru/'">부스 보러가기</button>
+    </div>
+
+    <!-- 부스 슬라이드 -->
+    <div class="boothranking-wrap Pyeong-Bold-White horizon-middle">BOOTH RANKING</div>
+    <section class="swiper mySwiper" style="position: absolute; top: 186%">
+        <div class="swiper-wrapper">
+            <div class="card swiper-slide" style="width: 250px">
+                <div class="card__content">
+                    <div class="card-intro Gmarket-Medium-White">
+                        Tip! <br /><br />
+                        슬라이드를 <span class="yellow">좌우</span>로 제스쳐하여 <span class="yellow">현재 가장 인기있는 부스 5개</span>를 확인할 수 있어요! <br /><br />
+                        <span class="red">주황색 글자</span>는 부스 위치입니다. <br />
+                    </div>
+                    <!-- <button class="card__btn">View More</button> -->
+                </div>
+            </div>
+            {% for intruduce in intruduce_list %}
+            <div class="card swiper-slide Gmarket-Medium-White" style="width: 250px">
+                {% if intruduce.imagecheack == none %}
+                <div class="card__image flex-justify-center"><img src="{% static "/img/hanseo.png" %}" alt="card image"></div>
+                {% else %}
+                <div class="card__image">
+                    <img src="{{ intruduce.image.url }}" alt="card image" />
+                </div>
+                {% endif %}
+
+                <div class="card__content">
+                    <span class="boothNum">{{intruduce.loc}}</span>
+                    <span class="booth_name">{{intruduce.title}}</span>
+                    <span class="booth_info">{{intruduce.shortin}}</span>
+                    <a class="card__btn" href="{{intruduce.get_absolute_url}}" style="text-decoration: none">View More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- 타임테이블 -->
+    <div class="timetable-wrap Pyeong-Bold-White horizon-middle">TIME TABLE</div>
+    <div class="bottombox horizon-middle Gmarket-Medium-White">
+        <div class="bottombox_left">
+            <div>10.5 (목)</div>
+            <div class="day1-1">
+                주간부스사업
+                <div class="place">📍 인곡관 조각공원</div>
+                <button class="booth" onclick="location.href = 'intru/'">부스 보러가기</button>
+            </div>
+            <div class="day1-2">
+                동아리 공연
+                <div class="place">📍 대운동장</div>
+            </div>
+            <div class="day1-3">
+                행사
+                <div class="place">📍 인곡관 조각공원</div>
+            </div>
+            <div class="day1-4">
+                연예인 공연
+                <div class="place">📍 대운동장</div>
+                <div class="celebrity Gmarket-Medium-White">
+                    <img src="{% static "/img/BIBI.jpg" %}" alt="celebrity" class="celebrity_img" style="width: 25px; height: 25px; object-fit: cover; border-radius : 50%"> 비비(BIBI)
+                </div>
+                <div class="celebrity2 Gmarket-Medium-White">
+                    최예나(YENA) <img src="{% static "/img/yena.png" %}" alt="celebrity" class="celebrity_img" style="width: 25px; height: 25px; object-fit: cover; border-radius : 50%">
+                </div>
+            </div>
+        </div>
+        <div class="bottombox_mid">
+            <div class="schedule_time">TIME</div>
+            <div class="schedule_time">10:00</div>
+            <div class="schedule_time">11:00</div>
+            <div class="schedule_time">12:00</div>
+            <div class="schedule_time">13:00</div>
+            <div class="schedule_time">14:00</div>
+            <div class="schedule_time">15:00</div>
+            <div class="schedule_time">16:00</div>
+            <div class="schedule_time color_yellow">16:30</div>
+            <div class="schedule_time">17:00</div>
+            <div class="schedule_time">17:30</div>
+            <div class="schedule_time">18:00</div>
+            <div class="schedule_time color_yellow">18:30</div>
+            <div class="schedule_time">19:00</div>
+            <div class="schedule_time">20:00</div>
+            <div class="schedule_time">21:00</div>
+        </div>
+        <div class="bottombox_right">
+            <div>10.6 (금)</div>
+            <div class="day1-1">
+                주간부스사업
+                <div class="place">📍 인곡관 조각공원</div>
+                <button class="booth" onclick="location.href = 'intru/'">부스 보러가기</button>
+            </div>
+            <div class="day1-2">
+                동아리 공연
+                <div class="place">📍 대운동장</div>
+            </div>
+            <div class="day1-3">
+                행사
+                <div class="place">📍 인곡관 조각공원</div>
+            </div>
+            <div class="day1-4">
+                연예인 공연
+                <div class="place">📍 대운동장</div>
+                <div class="celebrity Gmarket-Medium-White">
+                    <img src="{% static "/img/unedu.png" %}" alt="celebrity" class="celebrity_img" style="width: 25px; height: 25px; object-fit: cover; border-radius : 50%"> 수퍼비(SUPERBEE)
+                </div>
+                <div class="celebrity2 Gmarket-Medium-White">
+                    언에듀케이티드 키드 <img src="{% static "/img/super.png" %}" alt="celebrity" class="celebrity_img" style="width: 25px; height: 25px; object-fit: cover; border-radius : 50%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 방명록 -->
+    <div class="comment-title Pyeong-Bold-White horizon-middle">GUEST BOOK</div>
+    <div class="comment-wrap horizon-middle">
+        <div class="Comment flex-justify-center">
+            <div>
+                <div class="Comment_contain_outbox">
+                    <div class="Comment_contain">
+                        <div class="mainComment">
+                            축제 D-3
+                        </div>
+                        <div class="_3minutes">
+                            3분전
+                        </div>
+                    </div>
+                </div>
+
+                <div class="Comment_introduce">
+                    <div class="Comment_memo Gmarket-Medium-White">
+                        동아리 멋쟁이 사자처럼의 축제 웹을 이용하고 <br />
+                        <span class="yellow">방명록</span>을 작성해주세요!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="enter_button horizon-middle" onclick="location.href = 'comments/'" style="text-decoration: none">방명록 남기러가기</button>
+    </div>
+    <div class="made-wrap Pyeong-Bold-White horizon-middle">
+        <div class="made-title">MADE</div>
+        <img src="./img/likelion.png" alt="" class="logo" />
+        <div class="introduce Gmarket-Medium-White">
+            한서대학교 웹 개발 중앙동아리<br /><span class="yellow">멋쟁이사자처럼 11기</span>에서<br />
+            한서대학교 대동제 <span class="red">동그라미</span>와 함께합니다.
+        </div>
+        <button class="enter_button" onclick="location.href = 'about/'" style="text-decoration: none">자세히보기</button>
+    </div>
+
+    <div class="footer horizon-middle Gmarket-Medium-White">
+        한서대학교 멋쟁이 사자처럼 <br />
+        LIKE LION HSU
+    </div>
+
+</div>
+
+{% endblock content %} 
+
+{% block script %}
+
+<!-- 자바스크립트 -->
+
+<!-- Swiper JS - 부스 정보 스와이프 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script type="text/javascript">
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 300,
+            modifier: 1,
+            slideShadows: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+    });
+</script>
+
+{% endblock script %}

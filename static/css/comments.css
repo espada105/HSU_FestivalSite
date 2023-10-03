@@ -1,0 +1,104 @@
+.commentsContainer {
+  /* width: 336px; */
+  width: 86vw;
+  /* height: 510px; */
+  height: 62vh;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+
+.commentsWrap {
+  padding: 13px 15px;
+  background: rgba(249, 250, 252, 0.20);
+}
+
+.commentBox {
+  flex-direction: column;
+  width: 316px;
+  min-height: 35px;
+  padding: 6px 0 8px 7px;
+  border-bottom: 0.4px solid rgba(0, 0, 0, 0.30);
+  margin-bottom: 5px;
+}
+
+.info{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+
+.name {
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.comment-date {
+  color: #FFF;
+  font-size: 8px;
+  font-weight: 300;
+}
+
+.comment {
+  color: #FFF;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.inputContainer {
+  position: fixed;
+  /* top: 775px; */
+  bottom: 20px;
+  width: 86vw;
+  left: 50%;
+  transform: translateX( -50% );
+}
+
+.nameInput {
+  width: 18%;
+  height: 4.9vh;
+  border-radius: 10px;
+  background: rgba(249, 250, 252, 0.20);
+  border: 0;
+  padding: 0 0 0 10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #FFF;
+}
+
+.inputBox {
+  width: 80%;
+  height: 4.9vh;
+  display: flex;
+}
+
+.commentInput {
+  border-radius: 10px 0px 0px 10px;
+  background: rgba(249, 250, 252, 0.20);
+  border: 0;
+  padding: 0 0 0 12px;
+  font-size: 17px;
+  font-weight: 500;
+  right: 0px;
+  height: 100%;
+  width: 85%;
+  color: #FFF;
+}
+
+.submitInput {
+  border-radius: 0px 10px 10px 0px;
+  background: #1D0041;
+  color: #FFF;
+  font-size: 13px;
+  font-weight: 500;
+  height: 100%;
+  width: 15%;
+  border: 0;
+}
+
+.flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}

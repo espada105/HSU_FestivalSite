@@ -1,0 +1,469 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 모바일 버전 */
+@media all and (max-width:767px){
+
+        .horizon-middle {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+    
+        .title {
+            font-size: 12vh;
+            line-height: 27vw;
+            top: 30%;
+    
+        }
+    
+        .title {
+            animation: title 1s ease infinite;
+            -webkit-animation: title 2s ease infinite;
+        }
+    
+        @keyframes title {
+    
+            0%,
+            100% {
+                text-shadow: 0 0 1vw #FDF7E5, 0 0 3vw #ffaa01, 0 0 10vw #d4b134, 0 0 10vw #F3D460, 0 0 .4vw #F3D460, .5vw .5vw .1vw #F3D460;
+                color: #FDF7E5;
+            }
+    
+            /* 깜빡임 */
+            50% {
+                text-shadow: 0 0 .5vw #FDF7E5, 0 0 3vw #ffaa01, 0 0 1vw #d4b134, 0 0 10vw #F3D460, 0 0 .4vw #F3D460, .5vw .5vw .1vw #F3D460;
+                color: #f7efd4;
+            }
+        }
+    
+        .date {
+            position: absolute;
+            top: 60%;
+            right: 26%;
+            display: flex;
+        }
+    
+        .desc {
+            position: absolute;
+            top: 64%;
+            right: 26%;
+            width: 100vw;
+        }
+    
+        p {
+            padding-top: 80px;
+            position: absolute;
+            left: 50%;
+            top: 70%;
+        }
+        
+        /* 메인 타이틀 밑 움직이는 화살표 */
+        p span { 
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            margin-left: -12px;
+            border-left: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: sdb 2s infinite;
+            animation: sdb 2s infinite;
+            opacity: 0;
+            box-sizing: border-box;
+        }
+    
+        p span:nth-of-type(1) {
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+        }
+    
+        p span:nth-of-type(2) {
+            top: 16px;
+            -webkit-animation-delay: .15s;
+            animation-delay: .15s;
+        }
+    
+        p span:nth-of-type(3) {
+            top: 32px;
+            -webkit-animation-delay: .3s;
+            animation-delay: .3s;
+        }
+    
+        @-webkit-keyframes sdb {
+            0% {
+                opacity: 0;
+            }
+    
+            50% {
+                opacity: 1;
+            }
+    
+            100% {
+                opacity: 0;
+            }
+        }
+    
+        @keyframes sdb {
+            0% {
+                opacity: 0;
+            }
+    
+            50% {
+                opacity: 1;
+            }
+    
+            100% {
+                opacity: 0;
+            }
+        }
+    
+        .boothmap-wrap {
+            width: 89vw;
+            height: 45vh;
+            top: 100%;
+            font-size: 20px;
+        }
+
+        .mainMap {
+            margin-top: 4vh;
+            width: 100%;
+            height: 90%;
+        }
+    
+        .boothranking-wrap {
+            top: 180%;
+            font-size: 2.4vh;
+        }
+    
+        /* 부스 슬라이드 */
+        .swiper {
+            width: 100%;
+        }
+    
+        .swiper-wrapper {
+            height: 35em;
+        }
+    
+        .card {
+            background-color: #e7e7e722;
+            border-radius: 2em;
+            box-shadow: 0 0 2em rgba(0, 0, 0, .2);
+            padding: 2em 1em;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 2em;
+        }
+    
+        .swiper-slide:not(.swiper-slide-active) {
+            filter: blur(1px);
+        }
+    
+        .card__image {
+            width: 100%;
+            height: 15em;
+            align-items: center
+        }
+    
+        .card__image img {
+            object-fit: cover;
+            border-radius: 2em 2em 0em 0em;
+            margin-bottom: 2px;
+        }
+    
+        .card__content {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20vw;
+            
+        }
+    
+        .card-intro {
+            width: 310px;
+            height: 100%;
+            color: white;
+            padding: 50px;
+            font-size: 15px;
+        }
+    
+        .boothNum {
+            font-size: 0.8rem;
+            position: relative;
+            top: -4em;
+            color: #DA6953;
+        }
+    
+        .booth_name {
+            font-size: 1.3rem;
+            font-weight: 500;
+            position: relative;
+            top: -2em;
+            font-weight: 700;
+            color: #ffff;
+        }
+    
+        .booth_info {
+            text-align: center;
+            font-size: 1rem;
+            color: #dadada;
+            font-weight: 100;
+            position: relative;
+            top: -1em;
+        }
+    
+        .card__btn {
+            background-color: #F7DD7D;
+            color: #fff;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            border: none;
+            padding: .5em;
+            border-radius: .5em;
+            margin-top: .5em;
+            cursor: pointer;
+        }
+    
+    
+        /* 타임테이블 */
+    
+        .timetable-wrap {
+            font-size: 20px;
+            top: 268%;
+        }
+    
+        .bottombox {
+            top: 270%;
+        }
+    
+        .midbox {
+            width: 90vw;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+    
+        .bottombox {
+            width: 95vw;
+            margin-top: 10vw;
+            display: flex;
+            justify-content: space-around;
+    
+        }
+    
+        .bottombox_left,
+        .bottombox_mid,
+        .bottombox_right {
+            color: white;
+            display: flex;
+            flex-direction: column;
+    
+        }
+    
+        .bottombox_left {
+            width: 35vw;
+        }
+    
+        .schedule_time {
+            margin: 10%;
+            font-size: 4vw;
+        }
+    
+        .bottombox_right {
+            width: 35vw;
+        }
+    
+        .day1-1,
+        .day1-2,
+        .day1-3,
+        .day1-4 {
+            background-color: rgba(255, 255, 255, 0.199);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2vw;
+            padding: 3vw;
+            font-size: 4vw;
+            font-weight: 900;
+        }
+    
+        .color_yellow {
+            color: rgb(255, 217, 0);
+        }
+    
+        .day1-1 {
+            height: 40%;
+            padding: 3vw;
+            margin-top: 13%;
+            font-size: 4vw;
+            font-weight: 900;
+        }
+    
+        .day1-2 {
+            margin-top: 3%;
+            height: 15%;
+        }
+    
+        .day1-3 {
+            margin-top: 3%;
+            height: 13%;
+        }
+    
+        .day1-4 {
+            margin-top: 3%;
+            height: 22%;
+        }
+    
+        .place {
+            width: 25vw;
+            margin-top: 1vw;
+            margin-bottom: 1vw;
+            font-size: 10px;
+        }
+    
+        .booth {
+            width: 20vw;
+            height: 6vw;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.295);
+            border: 0px;
+            border-radius: 1.7vw;
+            font-size: 2.7vw;
+            font-weight: 900;
+            color: white;
+        }
+    
+        .celebrity_img {
+            width: 5vw;
+        }
+    
+        .celebrity {
+            width: 25vw;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            font-size: 1vw;
+        }
+    
+        .celebrity2 {
+            width: 25vw;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            font-size: 1vw;
+        }
+    
+        /* 방명록 */
+        .comment-wrap {
+            top: 355%;
+            flex-direction: column;
+            font-size: 10vw;
+            font-weight: 900;
+            color: #FDF7E5;
+    
+        }
+    
+        .comment-title {
+            top: 350%;
+            font-size: 20px;
+        }
+    
+        .enter_button {
+            width: 43vw;
+            height: 12vw;
+            border: 0px;
+            background-color: blanchedalmond;
+            border-radius: 5vw;
+            font-size: 4vw;
+            color: #1D0041;
+            font-weight: 900;
+            margin-top: 5%;
+            cursor: pointer;
+        }
+    
+        .Comment {
+            height: 30vh;
+            width: 100vw;
+            align-items: center;
+            flex-direction: column;
+            padding: 1%;
+            background-color: #e7e7e722;
+    
+        }
+    
+        .Comment_contain_outbox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+    
+        .Comment_contain {
+            width: 95vw;
+            height: 30vw;
+            padding: 5%;
+            margin-bottom: 2vw;
+            border-radius: 3vw;
+            background-color: #FDF7E5;
+            font-family: 'GmarketSansMedium';
+            font-weight: 100;
+            color: black;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .mainComment {
+            text-align: left;
+            overflow: scroll;
+        }
+    
+        ._3minutes {
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            font-size: 3vw;
+            font-weight: 100;
+    
+        }
+    
+        .Comment_memo {
+            width: 100%;
+            height: 100%;
+            font-weight: 100;
+            margin-top: 5%;
+            font-size: 15px;
+        }
+    
+    
+        /* 만든이들 */
+        .made-wrap {
+            top: 420%;
+            font-size: 20px;
+        }
+    
+        .logo {
+            margin-top: 20px;
+        }
+    
+        .introduce {
+            width: 300px;
+            font-weight: 100;
+            font-size: 14px;
+        }
+}

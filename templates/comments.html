@@ -1,0 +1,44 @@
+{% extends "baseDetail.html" %} 
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/comments.css'%}" />
+{% endblock css %}
+
+{% block title %}
+COMMENT
+{% endblock title %}
+
+{% block detail %}
+
+    <div class="commentsContainer">
+
+        <!-- 방명록 -->
+        <div class="commentsWrap">
+            {% for comment in comments %}
+            <div class="commentBox">
+                <div class="info">
+                    <div class="name">{{comment.nickname}}</div>
+                    <div class="comment-date">{{comment.created|date:'Y.m.d H:i'}}</div>
+                </div>
+                <div class="comment">{{comment.comment}}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+        <!-- 방명록 작성 -->
+        <div class="inputContainer Gmarket-Medium-White">
+            <form class="flexSpaceBetween" action="{% url 'comments' %}" method="POST">
+                {% csrf_token %}
+                <input class="nameInput" type="text" name="nickname" placeholder="닉네임" required />
+                <div class="inputBox">
+                    <input class="commentInput" type="text" name="comment" placeholder="댓글 내용" required />
+                    <input class="submitInput" type="submit" value="등록" />
+                </div>
+            </form>
+        </div>
+
+    {% comment %} </div> {% endcomment %}
+
+{% endblock detail%}

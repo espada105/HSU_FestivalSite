@@ -1,0 +1,67 @@
+{% extends "baseDetail.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/booth.css" %}" >
+{% endblock css%}
+
+{% block title %}
+BOOTH INFO
+{% endblock title %}
+
+{% block detail %}
+        <div class="map flex-justify-center">
+            <!-- 지도사진들어가는곳> -->
+            <img  src="{% static "img/boothLoc.jpeg" %}" class="hanseo_map" alt="hanseo_map" id = "dl">
+            {% for introduce in intruduce_list%}
+            <button id="myid" value = "booth{{introduce.id}}" class = "move" style = "margin-top:{{introduce.x}}vw ;margin-left:{{introduce.y}}vw ;"><img src = "{% static "img/pngwing.com (1).png" %}" style = "width: 2vw; height : 2vw; "></button>
+            {% endfor %}
+        </div>
+        
+        <div class="boothContainer">
+            <div class = "scroll" id = "scroll">
+                <div id = "target"></div>
+                
+                {% for post in intruduce_list %}
+                
+                <div class="booth_outbox"  id = "booth{{post.id}}">
+                    <div class="booth_image flex-justify-center">
+                        <img src="{% static "img/hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
+                    </div>
+                    <div class="booth" >
+                        <div class="heart_outbox">
+                            <div class="con">
+                                <p id="count-{{ post.id }}">
+                                    {{ post.likecount }}개
+                                </p>
+                                <button id = "Like" name="{{ post.id }}" class="heart">
+                                    <svg class="heartIcon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                        <path class="heartIcon" d="m479.435-93.999-71.001-63.87Q305.173-250.565 237.76-318.26q-67.413-67.696-106.696-121.609-39.282-53.913-55.065-99.609Q60.216-585.174 60.216-634q0-102.453 68.504-171.118 68.503-68.666 170.715-68.666 51.396 0 97.85 19.739 46.454 19.739 82.15 56.913 35.695-37.174 82.15-56.913 46.454-19.739 97.85-19.739 102.694 0 171.521 68.666Q899.784-736.453 899.784-634q0 48.261-15.5 93.957-15.5 45.695-55.066 99.326-39.565 53.63-107.261 121.609-67.695 67.978-171.522 161.239l-71 63.87Zm0-142.48q94.869-86 156.021-146.087 61.153-60.086 96.305-104.739 35.152-44.652 48.587-78.822 13.434-34.17 13.434-67.859 0-57.753-38.307-95.775-38.307-38.021-95.768-38.021-45.011 0-83.881 26.5-38.869 26.5-53.869 67.5h-84.479q-14.732-41-54.018-67.5t-83.871-26.5q-56.917 0-94.861 38.021-37.945 38.022-37.945 95.761 0 34.297 13.683 69.084 13.684 34.787 48.87 79.373 35.186 44.586 95.773 104.391 60.587 59.804 154.326 144.673Zm1.13-265.651Z"/>
+                                        <path class="heartIcon" fill="rgba(255, 255, 255, 0.02)" d="m479.435-93.999-71.001-63.87Q305.173-250.565 237.76-318.26q-67.413-67.696-106.696-121.609-39.282-53.913-55.065-99.609Q60.216-585.174 60.216-634q0-102.479 68.37-171.131 68.37-68.653 170.849-68.653 51.435 0 97.869 19.739 46.435 19.739 82.131 56.913 35.695-37.174 82.13-56.913 46.435-19.739 97.87-19.739 102.478 0 171.414 68.653Q899.784-736.479 899.784-634q0 48.261-15.5 93.957-15.5 45.695-55.066 99.326-39.565 53.63-107.261 121.609-67.695 67.978-171.522 161.239l-71 63.87Z"/>
+                                    </svg>
+                                </button>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="boothInfoBox">
+                            <div class="place Gmarket-Medium-White red">{{post.loc}}</div>
+                            <div class="booth_name"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></div>
+                            <div class="introduce">{{ post.shortin }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}              
+
+
+            </div>
+            
+        </div>
+        
+{% endblock detail %}
+
+{% block script %}
+    
+    <script type="text/javascript" src="{% static "js/Booth_Info.js" %}"></script>
+
+{% endblock script %}

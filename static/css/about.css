@@ -1,0 +1,73 @@
+.end {
+    font-size: 20px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+.profil {
+    width: 160px;
+    height: 200px;
+    margin: 4px;
+    padding: 13px;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(0deg, rgba(255,255,255,0.5) 63%, rgba(255,255,255,0.5) 61%, rgba(255,255,255,0.5) 93%);
+}
+.p-b {
+    display: flex;
+}
+.container {
+    width: 390px;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+.profil-box {
+    flex-direction: column;
+    align-items: center;
+}
+.extra-imf{
+    color: #ffffff;
+    font-size: 12px;
+    margin: 14px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+.name {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    font-size: 17px;
+    border: 10px;
+}
+.lion {
+    font-size: 17px;
+    margin: 0;
+}
+.major {
+    margin: 10px;
+    font-size: 10px;
+}
+.박대영 {
+    padding-left: 19px;
+    padding-top: 5px;
+}
+.김다빈 {
+    padding-right: 8px;
+}
+.P_name {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    padding-bottom: 2.3px;
+}
+.H_name {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 3px;
+    margin-bottom: 7px;
+}
+
+.footerWrap {
+    text-align: center;
+    margin-top: 30px;
+}

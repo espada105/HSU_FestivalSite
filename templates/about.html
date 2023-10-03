@@ -1,0 +1,71 @@
+{% extends "baseDetail.html" %} 
+{% load static %} 
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "css/about.css" %}" >
+{% endblock css %}
+
+{% block title %} 
+ABOUT 
+{% endblock title %} 
+
+{% block detail%}
+<div class="profil-box flex-justify-center">
+    <div class="end Gmarket-Medium-White">PM & Product Design</div>
+    <div class="p-b">
+        <div class="profil flex-justify-center">
+            <img class="박대영" src="{% static "img/PDY.png" %}" width="140px", height="140px" alt="박대영">
+            <div class="P_name"><p class="lion">&#129409;</p><strong>박대영</strong></div>
+            <div class="major yellow"><strong>항공소프트웨어공학과 18</strong></div>
+        </div>
+    </div>
+</div>
+<div class="profil-box flex-justify-center">
+    <div class="end Gmarket-Medium-White">Product Design & Front - end</div>
+    <div class="p-b">
+        <div class="profil flex-justify-center">
+            <img class="김다빈" src="{% static "img/LDB.png" %}" width="130px", height="130px" alt="김다빈">
+            <div class="name"><p class="lion">&#129409;</p><strong>김다빈</strong></div>
+            <div class="major yellow"><strong>항공소프트웨어공학과 20</strong></div>
+        </div>
+    </div>
+</div>
+<div class="profil-box flex-justify-center">
+    <div class="end Gmarket-Medium-White">Front - end</div>
+    <div class="p-b">
+        <div class="profil flex-justify-center">
+            <img src="{% static "img/HSI.png" %}" width="140px", height="140px" alt="홍성인">
+            <div class="H_name"><p class="lion">&#129409;</p><strong>홍성인</strong></div>
+            <div class="major yellow"><strong>항공컴퓨터공학과 20</strong></div>
+        </div>
+        <div class="profil flex-justify-center">
+            <img src="{% static "img/LHB.png" %}" width="130px", height="130px" alt="이하빈">
+            <div class="name"><p class="lion">&#129409;</p><strong>이하빈</strong></div>
+            <div class="major yellow"><strong>항공소프트웨어공학과 22</strong></div>
+        </div>
+    </div>
+</div>
+
+<div class="profil-box flex-justify-center">
+    <div class="end Gmarket-Medium-White">Back - end & Front - end</div>
+    <div class="p-b">
+        <div class="profil flex-justify-center">
+            <img src="{% static "img/LKH.png" %}" width="130px", height="130px" alt="이가현">
+            <div class="name"><p class="lion">&#129409;</p><strong>이가현</strong></div>
+            <div class="major yellow"><strong>항공소프트웨어공학과 19</strong></div>
+        </div>
+        <div class="profil flex-justify-center">
+            <img src="{% static "img/LSM.png" %}" width="130px", height="130px" alt="이승민">
+            <div class="name"><p class="lion">&#129409;</p><strong>이승민</strong></div>
+            <div class="major yellow"><strong>항공컴퓨터공학과 22</strong></div>
+        </div>
+    </div>
+</div>
+
+<div class="footerWrap flex-justify-center">
+    <div class="footer horizon-middle Gmarket-Medium-White">
+        한서대학교 멋쟁이 사자처럼 <br />
+        LIKE LION HSU
+    </div>
+</div>
+{% endblock detail %}

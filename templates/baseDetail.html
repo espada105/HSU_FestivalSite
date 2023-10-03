@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static "css/baseDetail.css" %}" >
+    {% block css %}
+    {% endblock css %}
+{% endblock head %}
+
+{% block content %}
+    <div class="main">
+            
+        <div class="topbox">
+            <div class="동그라미 Gmarket-Medium-White" onclick="location.href='/'">동그라미</div>
+            <div class="flex-justify-center">
+                <div class="한서대대동제" onclick="location.href='/'">한서대<br>대동제</div>
+            </div>
+        </div>
+        <div class="midbox flex-justify-center">
+            <hr>
+            <div class="ABOUT flex-justify-center">
+                {% block title%}
+                {% endblock title%}
+            </div>
+            <hr>
+        </div>
+        
+        <div class="container">
+            {% block detail%}
+            {% endblock detail %}
+        </div>
+    </div>
+
+{% endblock content %}

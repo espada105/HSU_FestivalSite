@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, minimal-ui, viewport-fit=cover">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+        <title>한서대 대동제</title>
+        {% block head %} {% endblock head %} 
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <link rel="stylesheet" href="{% static "css/base.css" %}">
+    </head>
+
+    <body>
+        <!-- 배경 -->
+        <div class="noite">
+            <!-- 밤하늘 배경 -->
+            <div class="constelacao"></div>
+            <!-- 별 -->
+            <div class="lua">
+                <div class="textura"></div>
+                <!-- 달 -->
+            </div>
+        </div>
+
+        {% block content%} {% endblock content %} 
+        
+        {% block script %} {% endblock script %}
+        
+        <script type="text/javascript" src="{% static "js/script.js" %}"></script>
+    </body>
+</html>
